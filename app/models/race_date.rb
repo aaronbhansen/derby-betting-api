@@ -45,7 +45,7 @@ class RaceDate < ApplicationRecord
       races += 1
     end
 
-    Rails.logger.info("#{races} Races Found")
+    Rails.logger.info("#{races} Races Dates Found")
     true
   end
 
