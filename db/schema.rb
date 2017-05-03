@@ -74,6 +74,7 @@ ActiveRecord::Schema.define(version: 20170503034614) do
   end
 
   create_table "tracks", force: :cascade do |t|
+    t.integer "external_id", null: false
     t.text "name", null: false
     t.text "timezone"
     t.text "country"
