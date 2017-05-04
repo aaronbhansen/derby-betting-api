@@ -21,6 +21,8 @@ class RaceDate < ApplicationRecord
   #############
   belongs_to :track
 
+  has_many :races
+
   URL = "https://racedb.cdinet.net/tracks/CD/race-days.js"
 
   def self.load_dates
@@ -53,7 +55,7 @@ class RaceDate < ApplicationRecord
     track = Track.load_from_json(date_json['Track'])
     date = Date.parse(date_json['Date'], '%Y-%m-%d')
     self.find_or_create_by!(date: date, track: track) do |rd|
-      # Same Json
+      # Sample Json
       # =============
       # "TrackId":348,
       # "TrackCode":"CD",

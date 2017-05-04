@@ -14,9 +14,15 @@
 
 class Track < ApplicationRecord
 
+  #############
+  # Relations
+  #############
+  has_many :race_dates
+  has_many :races
+
   def self.load_from_json(track_json)
     self.find_or_create_by!(external_id: track_json['Id']) do |t|
-      # Same Data
+      # Sample Data
       # =============
       # "Id":348,
       # "Name":"Churchill Downs",

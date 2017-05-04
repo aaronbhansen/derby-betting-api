@@ -13,6 +13,7 @@ class CreateRaceEntries < ActiveRecord::Migration[5.1]
       t.integer    :morning_odds_denominator
       t.integer    :current_odds_numerator
       t.integer    :current_odds_denominator
+      t.integer    :finish_position
       t.decimal    :win_payoff
       t.decimal    :place_payoff
       t.decimal    :show_payoff
